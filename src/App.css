@@ -1,0 +1,236 @@
+/* App */
+.App{
+  /* width: 100%; */
+}
+
+h2{
+font-size: 1.5em !important;
+}
+
+.topbar{
+  width: 100%;
+  z-index: 3;
+  height: 50px;
+  background-color: #fff;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  display: none;
+  visibility: hidden;
+}
+
+.topbar button{
+  margin-right: 10px;
+}
+
+.topbar h2{
+  color: #46b3e6;
+}
+
+.topbar button{
+  border: 0;
+  background-color: #46b3e6;
+  color:#fff;
+}
+
+/* Sidebar */
+.Navigator{
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+
+.SidebarDiv{
+  background-color: #eaeaea;
+  width:25%;
+  max-width: 350px;
+  height: 100vh;
+  /* position: fixed; */
+}
+
+
+
+.titleDiv{
+  display: flex;
+  align-items: center;
+  margin: 0;
+}
+.titleDiv h2{
+  margin: 0;
+  color:#46b3e6;
+}
+
+#logo{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.SidebarNav{
+  display: flex;
+  margin: 0;
+  flex-direction: column;
+  padding:0 20px;
+}
+
+.SidebarDiv div{
+  padding: 10px;
+  margin:10px;
+   /* color: #46b3e6; */
+  /* background-color: red; */
+}
+
+.SidebarDiv div h2{
+  margin: 0;
+  display: inline;
+}
+
+.SidebarLinkActive{
+  color: #fff !important;
+  background-color: #46b3e6;
+  border-radius: 5px;
+}
+
+
+/* Page Layout */
+
+
+
+.Page{
+  width: 100%;
+}
+
+
+/* Page Headers */
+.Header{
+  /* position: fixed; */
+  max-height: 80px;
+  display: flex;
+  /* align-items: center; */
+  /* height: 10%; */
+  background-color: #46b3e6;
+  margin: 0px;
+  padding:15px 20px;
+}
+
+.Header h2{
+  color: #fff;
+}
+
+
+
+/* Orders Page */
+.Orders{
+ /* overflow-x: scroll; */
+}
+
+.OrdersBody{
+  display: flex;
+  padding-right: 50px;
+
+  /* overflow-x: scroll; */
+}
+
+
+
+
+/* Order Holder */
+
+.OrderHolder{
+  position: relative;
+  width: 40%;
+  min-width: 300px;
+  height: 75vh;
+  background-color: #eaeaea;
+  margin:50px 20px 0 20px;
+  color: #fff;
+
+}
+
+
+
+.HolderHeader{
+  background-color: #46b3e6;
+  padding:5px 25px;
+  height: 15%;
+  display: flex;
+  align-items: center;
+}
+
+.HolderHeader h2{
+  margin: 0;
+}
+
+
+.HolderBody{
+  height: 80%;
+  padding: 20px;
+  overflow-y: scroll;
+}
+
+/* width */
+.HolderBody::-webkit-scrollbar {
+  width: 0.5em;
+  /* border-radius: 10px; */
+  background-color: #00000000;
+}
+
+/* Track */
+.HolderBody::-webkit-scrollbar-track {
+  background: #f1f1f12a; 
+}
+ 
+/* Handle */
+.HolderBody::-webkit-scrollbar-thumb {
+  background: rgb(190, 190, 190); 
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+.HolderBody::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
+
+.filter{
+  position: absolute;
+  right: 20px;
+  top: 15px;
+}
+
+
+/* Order Card */
+.orderCard{
+  color: black;
+  background-color: #fff;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.cardContent p{
+  margin: 0;
+}
+
+.cardFooter{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardFooter button{
+  padding: 5px 20px;
+  border: 0;
+  background-color: #46b3e6;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 5px;
+  box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cardFooter button:hover{
+  transform: scale(1.05);
+}

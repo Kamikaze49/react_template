@@ -1,0 +1,52 @@
+@media screen and (max-width: 770px) {
+    .OrdersBody{
+        overflow-x: scroll;
+    }
+
+    .Page{
+        margin-top: 50px;
+    }
+
+    .OrderHolder{
+        margin-top: 20px;
+        height: 75vh;
+    }
+
+    .topbar{
+        visibility: visible;
+        display: flex;
+    }
+
+    .Navigator{
+        flex-direction: column;
+    }
+
+    .SidebarDiv{
+        width: 80vw;
+        height: 95%;
+        margin-top: 50px;
+        padding-top: 10px;
+        margin-right: 0;
+        position: fixed;
+        z-index: 3;
+    }
+
+    .sbda{
+        display: flex;
+      }
+      
+      .sbdp{
+        display: none;
+      }
+
+
+    .SidebarNav{
+        width: 100%;
+    }
+
+    .SidebarDiv .titleDiv{
+        display: none;
+    }
+
+
+  }
