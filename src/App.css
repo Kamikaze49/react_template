@@ -1,3 +1,10 @@
+:root{
+  --primary-color-blue: #46b3e6;
+  --app-grey: #eaeaea;
+}
+
+
+
 /* App */
 .App{
   /* width: 100%; */
@@ -25,12 +32,12 @@ font-size: 1.5em !important;
 }
 
 .topbar h2{
-  color: #46b3e6;
+  color: var(--primary-color-blue);
 }
 
 .topbar button{
   border: 0;
-  background-color: #46b3e6;
+  background-color: var(--primary-color-blue);
   color:#fff;
 }
 
@@ -59,7 +66,7 @@ font-size: 1.5em !important;
 }
 .titleDiv h2{
   margin: 0;
-  color:#46b3e6;
+  color:var(--primary-color-blue);
 }
 
 #logo{
@@ -79,7 +86,7 @@ font-size: 1.5em !important;
 .SidebarDiv div{
   padding: 10px;
   margin:10px;
-   /* color: #46b3e6; */
+   /* color: var(--primary-color-blue); */
   /* background-color: red; */
 }
 
@@ -90,7 +97,7 @@ font-size: 1.5em !important;
 
 .SidebarLinkActive{
   color: #fff !important;
-  background-color: #46b3e6;
+  background-color: var(--primary-color-blue);
   border-radius: 5px;
 }
 
@@ -111,7 +118,7 @@ font-size: 1.5em !important;
   display: flex;
   /* align-items: center; */
   /* height: 10%; */
-  background-color: #46b3e6;
+  background-color: var(--primary-color-blue);
   margin: 0px;
   padding:15px 20px;
 }
@@ -153,7 +160,7 @@ font-size: 1.5em !important;
 
 
 .HolderHeader{
-  background-color: #46b3e6;
+  background-color: var(--primary-color-blue);
   padding:5px 25px;
   height: 15%;
   display: flex;
@@ -224,7 +231,7 @@ font-size: 1.5em !important;
 .cardFooter button{
   padding: 5px 20px;
   border: 0;
-  background-color: #46b3e6;
+  background-color: var(--primary-color-blue);
   color: #fff;
   font-weight: bold;
   border-radius: 5px;
@@ -233,4 +240,83 @@ font-size: 1.5em !important;
 
 .cardFooter button:hover{
   transform: scale(1.05);
+}
+
+
+
+/* Login Page */
+.Login .Header{
+  width: 100vw;
+}
+
+.Login{
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  width: 100%;
+  /* justify-content: center; */
+}
+
+.LoginHeader{
+  color: var(--primary-color-blue);
+  width: 80%;
+  padding: 30px 0;
+  border-bottom: 5px solid var(--primary-color-blue);
+}
+
+.LoginHeader h2{
+  text-align: center;
+}
+
+.LoginContainer{
+  width: 25%;
+  min-height: 60%;
+  min-width: 250px;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  /* position: relative; */
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px auto 50px auto;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.LoginInputs{
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 80%;
+  color: #222;
+}
+
+.LoginInputs:focus{
+  outline: 0;
+}
+
+.LoginInputs input{
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #fafafa;
+  height: 50px;
+  border-radius: 3px;
+  margin:15px 0;
+  padding: 15px;
+}
+
+.LoginContainer button{
+  height: 50px;
+  width: 80%;
+  background-color: var(--primary-color-blue);
+  border: 0;
+  color: #fff;
+  font-weight: bold;
+  min-width: 150px;
+  margin: 50px 0 30px 0;
+
+}
+
+.LoginContainer a{
+  color: var(--primary-color-blue);
 }
