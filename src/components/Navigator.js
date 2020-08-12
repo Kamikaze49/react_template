@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, NavLink, Switch } from "react-router-do
 
 import logo from "./../images/CheckMark.png"
 
+import UserProvider from "../providers/UserProvider";
 import Account from "../pages/Account";
 import Orders from "../pages/Orders";
 import Overview from "../pages/Overview";
@@ -17,6 +18,7 @@ function Navigator() {
         <div className="Navigator">
 
             <Router>
+            <UserProvider>
             <div className="topbar">
                 <button onClick={()=>setToggled(!toggled)}>+</button>
                 <h2>Pharm</h2>
@@ -55,6 +57,8 @@ function Navigator() {
                     <Orders />
                 </Route>    
                 </Switch>
+
+                </UserProvider>
             </Router>
         </div>
     )
