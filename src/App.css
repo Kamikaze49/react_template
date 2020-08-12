@@ -19,8 +19,8 @@ font-size: 1.5em !important;
 
 .topbar{
   width: 100%;
-  z-index: 3;
-  height: 50px;
+  z-index: 4;
+  height: 65px;
   background-color: #fff;
   position: fixed;
   display: flex;
@@ -300,7 +300,7 @@ font-size: 1.5em !important;
   box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.LoginInputs{
+.LoginInputs, .SignUpInputs{
   margin-top: 50px;
   display: flex;
   flex-direction: column;
@@ -313,7 +313,7 @@ font-size: 1.5em !important;
   outline: 0;
 }
 
-.LoginInputs input{
+.LoginInputs input, .SignUpInputs input{
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #fafafa;
   height: 50px;
@@ -322,7 +322,7 @@ font-size: 1.5em !important;
   padding: 15px;
 }
 
-.LoginContainer button{
+.LoginContainer button, .BillingContainer button{
   height: 50px;
   width: 80%;
   background-color: var(--primary-color-blue);
@@ -336,4 +336,158 @@ font-size: 1.5em !important;
 
 .LoginContainer a{
   color: var(--primary-color-blue);
+}
+
+
+
+/* Sign Up Page */
+.Login .Header{
+  width: 100vw;
+}
+
+.SignUp{
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  width: 100%;
+  /* justify-content: center; */
+}
+
+.LoginHeader{
+  color: var(--primary-color-blue);
+  width: 80%;
+  padding: 30px 0;
+  border-bottom: 5px solid var(--primary-color-blue);
+}
+
+.LoginHeader h2{
+  text-align: center;
+}
+
+.SignUpContainer{
+  width: 60%;
+  min-height: 80vh;
+  min-width: 300px;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  /* position: relative; */
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px auto 50px auto;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.LoginInputs:focus{
+  outline: 0;
+}
+
+
+
+.SignUpContainer .next{
+  height: 50px;
+  width: 25%;
+  min-width: 150px;
+  background-color: var(--primary-color-blue);
+  border: 0;
+  color: #fff;
+  font-weight: bold;
+  min-width: 150px;
+  margin: 50px 0 30px 0;
+
+  align-self: flex-end;
+  margin-right: 10%;
+
+}
+
+.LoginContainer a{
+  color: var(--primary-color-blue);
+}
+
+.halfWidthInputs input{
+  width: 49%;
+}
+
+.halfWidthInputs input:first-child{
+  margin-right: 2%;
+}
+
+.GPS{
+  width: 100%;
+}
+
+.GPS input{
+  width: 70%;
+}
+
+#getCoords{
+  height: 50px;
+  width: 30%;
+  background-color: var(--primary-color-blue);
+  border: 0;
+  color: #fff;
+  font-weight: bold;
+  min-width: 150px;
+
+}
+
+input[type="file"]{
+  padding: 0;
+}
+
+input[type="file"]::-webkit-file-upload-button{
+  margin: 0;
+  background-color: var(--primary-color-blue);
+  border: 0;
+  padding: 12px;
+  color: #fff;
+  font-weight: bold;
+}
+
+
+/* Billing Info */
+
+.BillingContainer{
+  width: 60%;
+  min-height: 50vh;
+  min-width: 300px;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  /* position: relative; */
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px auto 50px auto;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.15);
+
+  display: none;
+}
+
+.BillingContainer h3{
+  color: var(--primary-color-blue);
+  font-size: 1.4em;
+}
+
+#cardNo{
+ width: 79%;
+ margin-right: 1%;
+}
+#cvv{
+  width: 20%;
+}
+#cardHolder{
+  width: 74%;
+  margin-right: 1%;
+}
+#expiry{
+  width: 25%;
+}
+
+#network{
+  margin-right: 2%;
+}
+
+.Mobile{
+  margin-top: 50px;
 }

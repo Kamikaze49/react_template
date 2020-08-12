@@ -5,6 +5,13 @@ import logo from "../images/CheckMark.png";
 
 const activeStyle = {
   textDecoration: "none",
+  backgroundColor: "#46b3e6",
+  color: "#fff",
+  borderRadius: "5px"
+}
+
+const navStyle = {
+  textDecoration: "none",
   color: "#46b3e6"
 }
 
@@ -29,7 +36,7 @@ export default function SideBar(){
             <NavLink
                 exact
                 to="/"
-                style={activeStyle}
+                style={navStyle}
                 activeStyle={activeStyle}
             >
                 <div><h2>Overview</h2></div>
@@ -37,7 +44,7 @@ export default function SideBar(){
             <NavLink
                 exact
                 to="/Orders"
-                style={activeStyle}
+                style={navStyle}
                 activeStyle={activeStyle}
             >
                 <div><h2>Orders</h2></div>
@@ -45,7 +52,7 @@ export default function SideBar(){
             <NavLink
                 exact
                 to="/Account"
-                style={activeStyle}
+                style={navStyle}
                 activeStyle={activeStyle} 
             >
                 <div><h2>Account</h2></div>
