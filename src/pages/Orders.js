@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react'
 
 import OrderHolder from "./../components/OrderHolder";
+import {withSideBar} from '../components/SideBar';
 
 
 function Orders() {
@@ -26,4 +27,4 @@ function Orders() {
     )
 }
 
-export default Orders
+export default withSideBar(Orders);

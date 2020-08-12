@@ -3,7 +3,10 @@
   --app-grey: #eaeaea;
 }
 
-
+* {
+  margin: 0;
+  padding: 0;
+}
 
 /* App */
 .App{
@@ -103,10 +106,15 @@ font-size: 1.5em !important;
 
 
 /* Page Layout */
-
-
-
 .Page{
+  width: 100%;
+}
+
+.PageWrapper {
+  display: flex;
+}
+
+.viewWindow {
   width: 100%;
 }
 
@@ -114,17 +122,21 @@ font-size: 1.5em !important;
 /* Page Headers */
 .Header{
   /* position: fixed; */
-  max-height: 80px;
+  box-sizing: border-box;
+  min-height: 6em;
   display: flex;
   /* align-items: center; */
   /* height: 10%; */
   background-color: var(--primary-color-blue);
   margin: 0px;
-  padding:15px 20px;
+  padding:auto 1.1em;
 }
 
 .Header h2{
   color: #fff;
+  margin: auto 1em;
+  font-size: 1.7em !important;
+  font-weight: 900;
 }
 
 
@@ -136,7 +148,8 @@ font-size: 1.5em !important;
 
 .OrdersBody{
   display: flex;
-  padding-right: 50px;
+  justify-content: space-evenly;
+  /* padding-right: 50px; */
 
   /* overflow-x: scroll; */
 }
@@ -148,11 +161,10 @@ font-size: 1.5em !important;
 
 .OrderHolder{
   position: relative;
-  width: 40%;
-  min-width: 300px;
+  width: 35vw;
   height: 75vh;
   background-color: #eaeaea;
-  margin:50px 20px 0 20px;
+  margin:2em 0;
   color: #fff;
 
 }
@@ -162,19 +174,22 @@ font-size: 1.5em !important;
 .HolderHeader{
   background-color: var(--primary-color-blue);
   padding:5px 25px;
-  height: 15%;
+  height: 10vh;
   display: flex;
   align-items: center;
+  box-shadow: .0 .1em .5em rgb(129, 129, 129);
 }
 
 .HolderHeader h2{
-  margin: 0;
+  /* margin: 0; */
+  text-align: center;
+  font-size: 1em;
 }
 
 
 .HolderBody{
   height: 80%;
-  padding: 20px;
+  padding: 1em;
   overflow-y: scroll;
 }
 
@@ -205,6 +220,8 @@ font-size: 1.5em !important;
   position: absolute;
   right: 20px;
   top: 15px;
+  font-size: .85em;
+  color: rgb(238, 238, 238);
 }
 
 
@@ -213,7 +230,7 @@ font-size: 1.5em !important;
   color: black;
   background-color: #fff;
   padding: 20px;
-  margin: 20px;
+  margin: 20px auto;
   border-radius: 10px;
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }

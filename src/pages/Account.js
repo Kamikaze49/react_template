@@ -1,4 +1,5 @@
 import React from 'react'
+import {withSideBar} from '../components/SideBar';
 
 function Account() {
     return (
@@ -10,4 +11,4 @@ function Account() {
     )
 }
 
-export default Account
+export default withSideBar(Account);

@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import {withSideBar} from '../components/SideBar';
 
 function Overview() {
     return (
@@ -10,4 +11,4 @@ function Overview() {
     )
 }
 
-export default Overview
+export default withSideBar(Overview);
