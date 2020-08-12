@@ -7,6 +7,7 @@ import Account from "../pages/Account";
 import Orders from "../pages/Orders";
 import Overview from "../pages/Overview";
 import Login from "../pages/Login";
+import SignUp from "../pages/SignUp";
 
 
 const Main = withRouter( ({ location }) =>{
@@ -26,7 +27,7 @@ function Navigator( {location} ) {
         
         <div className="Navigator">
         {
-            location.pathname !== "/SignIn" && (
+            location.pathname !== "/SignIn" && location.pathname !== "/SignUp" && (
             <>
                 <div className="topbar">
                     <button onClick={()=>setToggled(!toggled)}>+</button>
@@ -69,6 +70,9 @@ function Navigator( {location} ) {
             </Route>
             <Route path="/Orders">
                 <Orders />
+            </Route> 
+            <Route path="/SignUp">
+                <SignUp />
             </Route>    
         </Switch> 
                 
