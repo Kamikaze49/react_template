@@ -26,6 +26,8 @@ font-size: 1.5em !important;
   display: flex;
   align-items: center;
   padding: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   display: none;
   visibility: hidden;
 }
@@ -55,9 +57,9 @@ font-size: 1.5em !important;
 .SidebarDiv{
   background-color: #eaeaea;
   width:25%;
-  max-width: 350px;
+  /* max-width: 350px; */
   height: 100vh;
-  /* position: fixed; */
+  position: fixed;
 }
 
 
@@ -107,7 +109,8 @@ font-size: 1.5em !important;
 
 /* Page Layout */
 .Page{
-  width: 100%;
+  width: 75%;
+  margin-left: 25%;
 }
 
 .PageWrapper {
@@ -490,4 +493,73 @@ input[type="file"]::-webkit-file-upload-button{
 
 .Mobile{
   margin-top: 50px;
+}
+
+
+/* Account Page */
+.AccountBody{
+  display: flex;
+  flex-direction: row;
+
+}
+
+#icon{
+  width: 200px;
+}
+
+.Left{
+  border-right: 3px solid rgba(82, 81, 81, 0.096);
+  padding: 30px;
+  flex: 1;
+}
+
+.Right{
+  padding: 30px;
+  flex: 3;
+}
+
+.Visa, .MobilePayment{
+  margin-bottom: 50px;
+}
+
+.Visa div, .MobilePayment div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.BillingInfo{
+  padding: 30px;
+}
+
+.License{
+  width: 100%;
+  border-top: 3px solid rgba(82, 81, 81, 0.096);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.LicenseHeader{
+  background-color: var(--primary-color-blue);
+  padding: 15px;
+  color: #fff;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.License img{
+  width: 40%;
+  min-width: 300px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+}
+#imgDiv{
+  margin: 20px auto;
+  border: 1px solid black;
+  width: 60%;
+}
+
+.AccountBody h2, .AccountBody h4{
+  color: var(--primary-color-blue);
 }
