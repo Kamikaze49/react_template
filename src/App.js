@@ -8,16 +8,18 @@ import Account from "./pages/Account";
 import Orders from "./pages/Orders";
 import Overview from "./pages/Overview";
 import Topbar from "./components/Topbar"
+import Login from "./pages/Login"
 
-import Navigator from "./components/Navigator"
+import Main from "./components/Navigator"
 
 function App() {
   return (
-    <div className="App">
-      {/* <Topbar/> */}
-      <Navigator/>
-      
-    </div>
+    <Router>
+      <div className="App">
+        <Main/>
+      </div>
+    </Router>
+  
   );
 }
 
