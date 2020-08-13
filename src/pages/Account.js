@@ -6,14 +6,6 @@ import license from "./../images/largepreview.png"
 import Field from "./../components/Field"
 
 function Account() {
-    const [multiline, setMultiline] = useState(true)
-    useEffect(() =>{
-        if(window.innerWidth < 770){
-            console.log(multiline)
-            return setMultiline(true)
-        }else return setMultiline(false)
-    })
-
 
     return (
         <div className="Page">
@@ -52,24 +44,24 @@ function Account() {
                                 name="Card Number" 
                                 width="60%"
                                 value="0214 5794 1254 1023" 
-                                singleLine={multiline}/>
+                                singleLine={true}/>
                                 <Field 
                                 name="CVV" 
                                 width="20%"
                                 value="123" 
-                                singleLine={multiline}/>
+                                singleLine={true}/>
                             </div>
                             <div>
                                 <Field 
                                 name="Card Holder" 
                                 width="60%"
                                 value="John Doe" 
-                                singleLine={multiline}/>
+                                singleLine={true}/>
                                 <Field 
                                 name="Expiry" 
                                 width="20%"
                                 value="04/22" 
-                                singleLine={multiline}/>
+                                singleLine={true}/>
                             </div>
                         </div>
                         <h2>Mobile Payment</h2>
@@ -79,12 +71,12 @@ function Account() {
                                 name="Network" 
                                 width="49%"
                                 value="0214 5794 1254 1023" 
-                                singleLine={multiline}/>
+                                singleLine={true}/>
                                 <Field 
                                 name="Mobile Number" 
                                 width="49%"
                                 value="123" 
-                                singleLine={multiline}/>
+                                singleLine={true}/>
                             </div>
                         </div>
 
