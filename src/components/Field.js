@@ -23,7 +23,7 @@ function Field({name, width, value, singleLine}) {
         <div style={{width:width, minWidth:"250px"}}> 
             <span style={textStyle} >{name}:</span>
             {!singleLine && <br/>}
-            <input style={ singleLine?{...inputStyle, width:"70%"}:{...inputStyle, width:"100%"} } type="text" value={value} disabled="true"/>
+            <input style={ singleLine?{...inputStyle, width:"70%"}:{...inputStyle, width:"100%"} } type="text" value={value} disabled={true}/>
         </div>
     )
 }

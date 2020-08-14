@@ -5,7 +5,7 @@ const Context = createContext();
 
 export const UserProvider = ({ children }) => {
   const [user, setUser] = useState(
-    { id: '', 
+    { id: null, 
     email: '',
     image_url:"",
     license_url:"",
@@ -55,7 +55,7 @@ export const UserProvider = ({ children }) => {
   }, [])
   
   return (
-    <Context.Provider value={user}>
+    <Context.Provider value={[user, setUser]}>
       {children}
     </Context.Provider>
   );
