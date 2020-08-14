@@ -1,7 +1,7 @@
-import React, {useState, useEffect} from 'react'
-
+import React, {useState, useEffect, useContext } from 'react'
 import OrderHolder from "./../components/OrderHolder";
 import {withSideBar} from '../components/SideBar';
+import OrderContext, {OrderProvider} from "./../contexts/OrderContext";
 
 const History = [
     {
@@ -79,6 +79,7 @@ const History = [
 
 
 function Orders() {
+    const order = useContext(OrderContext)
 
     const [orders, setOrders] = useState([])
     const [history, setHistory] = useState([])
@@ -92,11 +93,12 @@ function Orders() {
 
     return (
         <div className="Page Orders">
+
             <div className="Header">
                 <h2>Orders</h2>
             </div>
             <div className="OrdersBody">
-                <OrderHolder title="All" data={orders} />
+                <OrderHolder title="All" data={order} />
                 <OrderHolder title="History" data={History} />
             </div>
         </div>
