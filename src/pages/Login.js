@@ -24,7 +24,7 @@ function Login() {
 
             db.collection("users").doc(account.uid).get()
             .then(doc =>{
-                if(doc.exists){
+                if(doc.exists && doc.data().isVerified){
                     console.log(doc.data())
                     let userData = doc.data()
                     setUser({...userData, id:account.uid})
