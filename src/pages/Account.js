@@ -67,13 +67,8 @@ function Account() {
                         <div className="MobilePayment">
                         <div>
                                 <Field 
-                                name="Network" 
-                                width="49%"
-                                value={user.network} 
-                                singleLine={true}/>
-                                <Field 
                                 name="Mobile Number" 
-                                width="49%"
+                                width="100%"
                                 value={user.mobile_number}
                                 singleLine={true}/>
                             </div>

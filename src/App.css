@@ -604,9 +604,10 @@ input[type="file"]::-webkit-file-upload-button{
 
 .Visa div, .MobilePayment div{
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 
 .BillingInfo{
@@ -658,6 +659,7 @@ input[type="file"]::-webkit-file-upload-button{
   background-color: #fff;
   color: var(--primary-color-blue);
   border: 0;
+  font-weight: bold;
   padding: 5px 10px;
   border-radius: 3px;
   box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
