@@ -262,6 +262,10 @@ font-size: 1.5em !important;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 
+.cardFooter p{
+  margin-right: 20px;
+}
+
 .cardFooter button:hover{
   transform: scale(1.05);
 }
@@ -662,3 +666,34 @@ input[type="file"]::-webkit-file-upload-button{
 .Overview .Header button:hover{
   transform: scale(1.05);
 }
+
+.RecentOrders, .info{
+  margin: 20px;
+  background-color: var(--app-grey);
+}
+
+.RecentOrdersBody{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.StatsBody{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.StatsBody div{
+  width: 50%;
+  min-width: 250px;
+  border: 10px solid var(--app-grey);
+  min-height: 300px;
+  background-color: #fff;
+}
+
+

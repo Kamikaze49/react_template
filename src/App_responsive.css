@@ -91,4 +91,8 @@
         display: block;
     }
 
+    .StatsBody div{
+        width: 100%;
+    }
+
 }
