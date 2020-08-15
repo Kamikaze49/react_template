@@ -141,7 +141,7 @@ function Login() {
             return setSuErrorMessage("Please select a hospital image")
         }
 
-        setSuErrorMessage("")
+        setSuErrorMessage(null)
         switchPage()
     }
 
@@ -162,7 +162,10 @@ function Login() {
 
             <div className={sodShow?"SignUpContainer":"SignUpContainer divHide"}>
                 <div className="LoginHeader">
-                    <p className="error">{suErrorMessage}</p>
+                    <p className={suErrorMessage?"error":"divHide"}>
+                        <h2>Error!</h2>
+                        <p>{suErrorMessage}</p>
+                    </p>
                     <h2>Sign Up</h2>
                 </div>
 
@@ -209,7 +212,7 @@ function Login() {
             <div className={billingInfoShow?"BillingContainer":"BillingContainer divHide"}>
                 <div className="LoginHeader">
                     <p className="BIback" onClick={()=> switchPage()}>Back</p>
-                    <p className="error">{biErrorMessage}</p>
+                    <p className={biErrorMessage?"error":"divHide"}>{biErrorMessage}</p>
                     <h2>Billing Info</h2>
                 </div>
 
