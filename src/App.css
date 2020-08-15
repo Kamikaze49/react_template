@@ -1,6 +1,7 @@
 :root{
   --primary-color-blue: #46b3e6;
   --app-grey: #eaeaea;
+  --app-orange: #FFA500;
 }
 
 * {
@@ -19,13 +20,15 @@ font-size: 1.5em !important;
 
 .topbar{
   width: 100%;
-  z-index: 3;
-  height: 50px;
+  z-index: 4;
+  height: 65px;
   background-color: #fff;
   position: fixed;
   display: flex;
   align-items: center;
   padding: 5px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   display: none;
   visibility: hidden;
 }
@@ -55,9 +58,9 @@ font-size: 1.5em !important;
 .SidebarDiv{
   background-color: #eaeaea;
   width:25%;
-  max-width: 350px;
+  /* max-width: 350px; */
   height: 100vh;
-  /* position: fixed; */
+  position: fixed;
 }
 
 
@@ -107,7 +110,8 @@ font-size: 1.5em !important;
 
 /* Page Layout */
 .Page{
-  width: 100%;
+  width: 75%;
+  margin-left: 25%;
 }
 
 .PageWrapper {
@@ -239,6 +243,10 @@ font-size: 1.5em !important;
   margin: 0;
 }
 
+.HCC{
+  color: rgb(143, 143, 143);
+}
+
 .cardFooter{
   display: flex;
   justify-content: space-between;
@@ -300,7 +308,7 @@ font-size: 1.5em !important;
   box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.15);
 }
 
-.LoginInputs{
+.LoginInputs, .SignUpInputs{
   margin-top: 50px;
   display: flex;
   flex-direction: column;
@@ -313,7 +321,7 @@ font-size: 1.5em !important;
   outline: 0;
 }
 
-.LoginInputs input{
+.LoginInputs input, .SignUpInputs input{
   border: 1px solid rgba(0, 0, 0, 0.1);
   background-color: #fafafa;
   height: 50px;
@@ -322,7 +330,7 @@ font-size: 1.5em !important;
   padding: 15px;
 }
 
-.LoginContainer button{
+.LoginContainer button, .BillingContainer button{
   height: 50px;
   width: 80%;
   background-color: var(--primary-color-blue);
@@ -335,5 +343,313 @@ font-size: 1.5em !important;
 }
 
 .LoginContainer a{
+  color: var(--primary-color-blue);
+}
+
+
+
+/* Sign Up Page */
+
+.Login .Header{
+  width: 100vw;
+}
+
+.SignUp{
+  /* position: relative; */
+  display: flex;
+  flex-direction: column;
+  /* align-items: center; */
+  width: 100%;
+  /* justify-content: center; */
+}
+
+.LoginHeader{
+  color: var(--primary-color-blue);
+  width: 80%;
+  padding: 30px 0;
+  border-bottom: 5px solid var(--primary-color-blue);
+}
+
+.LoginHeader h2{
+  text-align: center;
+}
+
+.SignUpContainer{
+  width: 60%;
+  min-height: 80vh;
+  min-width: 300px;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  /* position: relative; */
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px auto 50px auto;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.LoginInputs:focus{
+  outline: 0;
+}
+
+
+
+.SignUpContainer .next{
+  height: 50px;
+  width: 25%;
+  min-width: 150px;
+  background-color: var(--primary-color-blue);
+  border: 0;
+  color: #fff;
+  font-weight: bold;
+  min-width: 150px;
+  margin: 50px 0 30px 0;
+
+  align-self: flex-end;
+  margin-right: 10%;
+
+}
+
+.LoginContainer a{
+  color: var(--primary-color-blue);
+}
+
+.halfWidthInputs input{
+  width: 49%;
+}
+
+.halfWidthInputs input:first-child{
+  margin-right: 2%;
+}
+
+.GPS{
+  width: 100%;
+}
+
+.GPS input{
+  width: 70%;
+}
+
+#getCoords{
+  height: 50px;
+  width: 30%;
+  background-color: var(--primary-color-blue);
+  border: 0;
+  color: #fff;
+  font-weight: bold;
+  min-width: 150px;
+
+}
+
+input[type="file"]{
+  padding: 0;
+}
+
+input[type="file"]::-webkit-file-upload-button{
+  margin: 0;
+  background-color: var(--primary-color-blue);
+  border: 0;
+  padding: 12px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.error{
+  text-align: center;
+  /* padding: 10px; */
+  /* background-color: #f7f7f7; */
+  color: var(--primary-color-blue);
+  border: 1px solid var(--primary-color-blue);
+  border-radius: 5px;
+}
+
+.error h2{
+  background-color: var(--primary-color-blue);
+  padding: 10px;
+  color: #fff;
+}
+
+.Modal{
+  z-index: 5;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0;
+}
+
+.ModalContent{
+  width: 30%;
+  min-width: 250px;
+  height: 40%;
+  min-height: 300px;
+  z-index: 3;
+  background-color: #fff;
+  margin: 50px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* align-items: center; */
+}
+
+.ModalContent h2{
+  color: var(--primary-color-blue);
+  padding: 10px;
+  border-bottom: 5px solid var(--primary-color-blue);
+}
+
+.ModalContent #toSignIn{
+  font-weight: bold;
+  color: #fff;
+  background-color: var(--primary-color-blue);
+  border: 0;
+  width: 50%;
+  min-width: 120px;
+  height: 40px;
+  margin: 0 auto;
+}
+
+
+
+/* Billing Info */
+
+.BillingContainer{
+  width: 60%;
+  min-height: 50vh;
+  min-width: 300px;
+  max-width: 900px;
+  display: flex;
+  flex-direction: column;
+  /* position: relative; */
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px auto 50px auto;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.15);
+
+}
+
+.BillingContainer h3{
+  color: var(--primary-color-blue);
+  font-size: 1.4em;
+}
+
+#cardNo{
+ width: 79%;
+ margin-right: 1%;
+}
+#cvv{
+  width: 20%;
+}
+#cardHolder{
+  width: 74%;
+  margin-right: 1%;
+}
+#expiry{
+  width: 25%;
+}
+
+#network{
+  margin-right: 2%;
+}
+
+.Mobile{
+  margin-top: 50px;
+}
+
+.Mobile input{
+  width: 100%;
+}
+
+.BIback{
+  position: relative;
+  top: 0;
+  left: 0;
+  font-weight: bold;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.divShow{
+  display: flex;
+  visibility: visible;
+}
+
+.divHide{
+  display: none;
+  visibility: hidden;
+}
+
+
+
+
+/* Account Page */
+.AccountBody{
+  display: flex;
+  flex-direction: row;
+
+}
+
+#icon{
+  width: 200px;
+}
+
+.Left{
+  border-right: 3px solid rgba(82, 81, 81, 0.096);
+  padding: 30px;
+  flex: 1;
+}
+
+.Right{
+  padding: 30px;
+  flex: 3;
+}
+
+.Visa, .MobilePayment{
+  margin-bottom: 50px;
+}
+
+.Visa div, .MobilePayment div{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.BillingInfo{
+  padding: 30px;
+}
+
+.License{
+  width: 100%;
+  border-top: 3px solid rgba(82, 81, 81, 0.096);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.LicenseHeader{
+  background-color: var(--primary-color-blue);
+  padding: 15px;
+  color: #fff;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.License img{
+  width: 40%;
+  min-width: 300px;
+  box-shadow: 2px 4px 8px rgba(0, 0, 0, 0.15);
+}
+#imgDiv{
+  margin: 20px auto;
+  border: 1px solid black;
+  width: 60%;
+}
+
+.AccountBody h2, .AccountBody h4{
   color: var(--primary-color-blue);
 }

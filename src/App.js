@@ -6,12 +6,15 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Navigator from "./components/Navigator"
 import {UserProvider} from './contexts/UserContext';
+import {OrderProvider} from './contexts/OrderContext';
 
 function App() {
   return (
     <Router>
      <UserProvider>
+      <OrderProvider>
         <Navigator />
+      </OrderProvider>
      </UserProvider>
     </Router>
   );

@@ -15,7 +15,15 @@ function OrderHolder({title, data}) {
             <div className="HolderBody">
                 {
                     data.map(item => 
-                        <OrderCard name={item.name} id={item.id}/>
+                        <OrderCard 
+                        key = {item.id}
+                        name={item.name} 
+                        arrived={item.suite} 
+                        completed={item.id%2?"true":"false"} 
+                        id={item.id}
+                        status = {item.status}
+                        patient_id={item.patient_id} 
+                        type={item.type}/>
                     )
                 }
             </div>
