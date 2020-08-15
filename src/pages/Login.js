@@ -16,6 +16,7 @@ function Login() {
         auth.signInWithEmailAndPassword(email, password)
         .catch(e =>{
             setError(e.message)
+            window.scrollTo(0, 0)
         })        
 
 
