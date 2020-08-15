@@ -1,86 +1,28 @@
-import React, {useState, useEffect} from 'react'
-import { BrowserRouter as Router, Route, NavLink, Switch, withRouter } from "react-router-dom";
-
-import logo from "./../images/CheckMark.png"
+import React from 'react'
+import { Route, Switch } from "react-router-dom";
 
 import Account from "../pages/Account";
+import OrderDetails from "../pages/OrderDetails";
 import Orders from "../pages/Orders";
 import Overview from "../pages/Overview";
 import Login from "../pages/Login";
 import SignUp from "../pages/SignUp";
+import Page404 from "../pages/404";
+import PrivateRoute from './PrivateRoute'
 
 
-const Main = withRouter( ({ location }) =>{
-    return(
-        <Navigator location={location} />
-    )
-
-
-
-} )
-
-
-function Navigator( {location} ) {
-    const [toggled, setToggled] = useState(false)
-
+function Navigator() {
     return (
-        
-        <div className="Navigator">
-        {
-            location.pathname !== "/SignIn" && location.pathname !== "/SignUp" && (
-            <>
-                <div className="topbar">
-                    <button onClick={()=>setToggled(!toggled)}>+</button>
-                    <h2>Pharm</h2>
-                </div>
-                <div className={toggled?"SidebarDiv sbda":"SidebarDiv sbdp"}>
-                    <div className="titleDiv">
-                        <img id="logo" src={logo}/>
-                        <h2>Pharm</h2>
-                    </div>
-                    <nav className="SidebarNav">
-                        <NavLink exact to="/Overview" activeClassName="SidebarLinkActive"
-                        style={{textDecoration:"none", color:"#46b3e6"}}>
-                            <div><h2>Overview</h2></div>
-                        </NavLink>
-                        <NavLink exact to="/Orders" activeClassName="SidebarLinkActive" 
-                        style={{textDecoration:"none", color:"#46b3e6"}}>
-                            <div><h2>Orders</h2></div>
-                        </NavLink>
-                        <NavLink exact to="/Account" activeClassName="SidebarLinkActive" 
-                        style={{textDecoration:"none", color:"#46b3e6"}}>
-                            <div><h2>Account</h2></div>
-                        </NavLink>    
-                    </nav>
-                </div>
-            </>   
-            )
-        }
-
-
         <Switch>
-            <Route exact path="/SignIn">
-                <Login />
-            </Route>
-            <Route path="/Overview">
-                <Overview />
-            </Route>
-            <Route path="/Account">
-                <Account />
-            </Route>
-            <Route path="/Orders">
-                <Orders />
-            </Route> 
-            <Route path="/SignUp">
-                <SignUp />
-            </Route>    
-        </Switch> 
-                
-
-                    
-        </div>
-    )
-
+            <PrivateRoute exact path='/' component={Overview} />
+            <PrivateRoute path='/Account' component={Account} />
+            <PrivateRoute exact path='/Orders' component={Orders} />
+            <PrivateRoute path='/Orders/:id' component={OrderDetails} />
+            <Route path='/SignIn' component={Login} />
+            <Route path='/SignUp' component={SignUp} />
+            <Route component={Page404} />
+        </Switch>
+    );
 }
 
-export default Main
+export default Navigator;
