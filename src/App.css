@@ -639,3 +639,26 @@ input[type="file"]::-webkit-file-upload-button{
 .AccountBody h2, .AccountBody h4{
   color: var(--primary-color-blue);
 }
+
+
+/* Overview page */
+.Header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Overview .Header button{
+  margin-right: 20px;
+  height: 40px;
+  background-color: #fff;
+  color: var(--primary-color-blue);
+  border: 0;
+  padding: 5px 10px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.Overview .Header button:hover{
+  transform: scale(1.05);
+}

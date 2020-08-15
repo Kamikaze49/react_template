@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react'
+import React, {useState, useContext, useEffect} from 'react'
 import { Link, useHistory } from "react-router-dom"
 import {db, auth, storage} from "./../firebase"
 
@@ -16,31 +16,7 @@ function Login() {
         auth.signInWithEmailAndPassword(email, password)
         .catch(e =>{
             setError(e.message)
-        })
-
-        auth.onAuthStateChanged(account =>{
-            console.log(account.uid)
-            console.log(user)
-
-            db.collection("users").doc(account.uid).get()
-            .then(doc =>{
-                if(doc.exists && doc.data().isVerified){
-                    console.log(doc.data())
-                    let userData = doc.data()
-                    setUser({...userData, id:account.uid})
-                    history.push("/")
-                }else{
-                    setError("User data not found")
-                }
-                
-            }).catch(e =>{
-                setError("Error retrieving user data")
-            })
-
-
-
-        })
-        
+        })        
 
 
     }
