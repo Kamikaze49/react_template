@@ -1,7 +1,6 @@
 :root{
   --primary-color-blue: #46b3e6;
   --app-grey: #eaeaea;
-  --app-orange: #FFA500;
 }
 
 * {
@@ -263,6 +262,10 @@ font-size: 1.5em !important;
   box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
 }
 
+.cardFooter p{
+  margin-right: 20px;
+}
+
 .cardFooter button:hover{
   transform: scale(1.05);
 }
@@ -456,17 +459,8 @@ input[type="file"]::-webkit-file-upload-button{
 
 .error{
   text-align: center;
-  /* padding: 10px; */
-  /* background-color: #f7f7f7; */
   color: var(--primary-color-blue);
-  border: 1px solid var(--primary-color-blue);
-  border-radius: 5px;
-}
-
-.error h2{
-  background-color: var(--primary-color-blue);
-  padding: 10px;
-  color: #fff;
+  padding: 5px 10px;
 }
 
 .Modal{
@@ -560,10 +554,6 @@ input[type="file"]::-webkit-file-upload-button{
   margin-top: 50px;
 }
 
-.Mobile input{
-  width: 100%;
-}
-
 .BIback{
   position: relative;
   top: 0;
@@ -614,9 +604,10 @@ input[type="file"]::-webkit-file-upload-button{
 
 .Visa div, .MobilePayment div{
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 
 .BillingInfo{
@@ -653,3 +644,61 @@ input[type="file"]::-webkit-file-upload-button{
 .AccountBody h2, .AccountBody h4{
   color: var(--primary-color-blue);
 }
+
+
+/* Overview page */
+.Header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Logout{
+  margin-right: 20px;
+  height: 40px;
+  background-color: #fff;
+  color: var(--primary-color-blue);
+  border: 0;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 3px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  bottom: 2em;
+  left: 20px;
+}
+
+.Logout:hover{
+  transform: scale(1.05);
+}
+
+.RecentOrders, .info{
+  margin: 20px;
+  background-color: var(--app-grey);
+}
+
+.RecentOrdersBody{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.StatsBody{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.StatsBody div{
+  width: 50%;
+  min-width: 250px;
+  border: 10px solid var(--app-grey);
+  min-height: 300px;
+  background-color: #fff;
+}
+
+
