@@ -107,4 +107,12 @@
         bottom: 3em;
     }
 
+    .LoginContainer{
+        width: 100%;
+        margin: 0;
+    }
+    .SignUpContainer{
+        margin: 0;
+    }
+
 }
