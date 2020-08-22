@@ -6,8 +6,8 @@ function HistoryCard({name, id, type, arrived, completed, patient_id, status}) {
         <div className="orderCard">
             <div className="cardContent HCC">
                 <p><strong>Order No. {id}</strong></p>
-                <p>Arrived: {arrived}</p>
-                <p>Completed: 14-05-2020</p>
+                <p>Arrived: {arrived || "16-03-2020"}</p>
+                <p>Completed: {completed || "14-05-2020"}</p>
             </div>
 
             <div className="cardFooter HCC">

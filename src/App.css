@@ -645,6 +645,10 @@ input[type="file"]::-webkit-file-upload-button{
   color: var(--primary-color-blue);
 }
 
+.License h2{
+  color: #fff;
+}
+
 
 /* Overview page */
 .Header{

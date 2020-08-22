@@ -25,7 +25,7 @@ function Login() {
     return (
         <div className="Login">
             <div className="Header">
-                <h2>Pharma</h2>
+                <h2>Rokcare</h2>
             </div>
 
             <div className="LoginContainer">

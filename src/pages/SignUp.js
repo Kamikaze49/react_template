@@ -157,7 +157,7 @@ function Login() {
     return (
         <div className="SignUp">
             <div className="Header">
-                <h2>Pharma</h2>
+                <h2>Rokcare</h2>
             </div>
 
             <div className={sodShow?"SignUpContainer":"SignUpContainer divHide"}>
