@@ -99,4 +99,12 @@
         bottom: 3em;
     }
 
+    #cardNo{
+        width: 100%;
+    }
+
+    .Logout{
+        bottom: 3em;
+    }
+
 }

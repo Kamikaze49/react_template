@@ -4,8 +4,7 @@ import React from 'react'
 const textStyle = {
     fontWeight:"bold",
     width:"30%",
-    minWidth:"150px",
-    marginRight:"20px"
+    minWidth:"70px",
 }
 
 
@@ -14,16 +13,15 @@ const inputStyle = {
     backgroundColor: "#fafafa",
     height: "40px",
     borderRadius: "3px",
-    margin:"15px 0",
     padding:"15px"
 }
 
 function Field({name, width, value, singleLine}) {
     return (
-        <div style={{width:width, minWidth:"250px"}}> 
+        <div style={{width:width, minWidth:"250px", margin:"15px 10px"}}> 
             <span style={textStyle} >{name}:</span>
             {!singleLine && <br/>}
-            <input style={ singleLine?{...inputStyle, width:"70%"}:{...inputStyle, width:"100%"} } type="text" value={value} disabled="true"/>
+            <input style={ singleLine?{...inputStyle, width:"70%"}:{...inputStyle, width:"100%"} } type="text" value={value} disabled={true}/>
         </div>
     )
 }
