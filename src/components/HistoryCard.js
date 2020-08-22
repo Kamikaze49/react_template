@@ -7,11 +7,11 @@ function HistoryCard({name, id, type, arrived, completed, patient_id, status}) {
             <div className="cardContent HCC">
                 <p><strong>Order No. {id}</strong></p>
                 <p>Arrived: {arrived}</p>
-                <p>Completed: {completed}</p>
+                <p>Completed: 14-05-2020</p>
             </div>
 
             <div className="cardFooter HCC">
-                <p>Status: <strong>New</strong></p>
+                <p></p>
                 <button><NavLink style={{color:"#fff"}} to={`/Orders/${id}`} >More...</NavLink></button>
             </div>
         </div>
