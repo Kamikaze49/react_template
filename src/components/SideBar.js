@@ -1,6 +1,8 @@
-import React, {useState, Fragment} from 'react';
-import {NavLink} from 'react-router-dom';
+import React, {useState, Fragment, useContext} from 'react';
+import {NavLink, useHistory} from 'react-router-dom';
 import logo from "../images/CheckMark.png";
+import {auth} from "./../firebase";
+import UserContext from "./../contexts/UserContext";
 
 
 const activeStyle = {
@@ -16,10 +18,20 @@ const navStyle = {
 }
 
 export default function SideBar(){
+  const [user, setUser] = useContext(UserContext)
+  const history = useHistory()
+
   const [show, setShow] = useState(false);
   const toggle = () => {
     setShow(show => !show);
   };
+
+  const logOut = () =>{
+    auth.signOut().then(()=>{
+        setUser({})
+        history.push("/SignIn")
+    })
+}
 
   return (
     <Fragment>
@@ -58,6 +70,7 @@ export default function SideBar(){
                 <div><h2>Account</h2></div>
             </NavLink>    
         </nav>
+        <button className="Logout" onClick={()=>logOut()}>Log Out</button>
       </div>
     </Fragment>
   );
