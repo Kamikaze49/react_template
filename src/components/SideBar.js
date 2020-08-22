@@ -37,12 +37,12 @@ export default function SideBar(){
     <Fragment>
       <div className="topbar">
         <button onClick={toggle}>+</button>
-        <h2>Pharm</h2>
+        <h2>Rokcare</h2>
       </div>
       <div className={`SidebarDiv ${show ? "sbda" : "sbdp"}`}>
         <div className="titleDiv">
             <img id="logo" src={logo} alt=''/>
-            <h2>Pharm</h2>
+            <h2>Rokcare</h2>
         </div>
         <nav className="SidebarNav">
             <NavLink

@@ -95,9 +95,9 @@ function Login() {
                     isVerified:false
                 })
 
-                setBiErrorMessage("Sign Up successful")
             }else{
                 setBiErrorMessage("Sign Up Failed")
+                window.scrollTo(0, 0)
             }
 
 
@@ -112,26 +112,36 @@ function Login() {
         const {pharmacy_name, email, password, confirm_password, phone_number, geolocation, license, hospital_image} = userData
 
         if(pharmacy_name == ""){
+            window.scrollTo(0, 0)
             return setSuErrorMessage("Pharmacy name is required")
+            
         }else if(email == "" || !email.match(/^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$/) ){
+            window.scrollTo(0, 0)
             return setSuErrorMessage("Email is required")
         }else if(password == ""){
+            window.scrollTo(0, 0)
             return setSuErrorMessage("Password is required")
         }else if(confirm_password == ""){
+            window.scrollTo(0, 0)
             return setSuErrorMessage("Please confirm password")
         }else if(password !== confirm_password){
+            window.scrollTo(0, 0)
             return setSuErrorMessage("Passwords do not match")
         }else if(phone_number == "" ||  !phone_number.match(/^\+?\d+$/) ){
+            window.scrollTo(0, 0)
             return setSuErrorMessage("Incorrect value entered for phone number")
         }else if(geolocation == null){
+            window.scrollTo(0, 0)
             return setSuErrorMessage("Please click Get Coordinates to receive coordinates")
         }else if(license == null){
+            window.scrollTo(0, 0)
             return setSuErrorMessage("Please select a license image")
         }else if(hospital_image == null){
+            window.scrollTo(0, 0)
             return setSuErrorMessage("Please select a hospital image")
         }
 
-        setSuErrorMessage("")
+        setSuErrorMessage(null)
         switchPage()
     }
 
@@ -152,7 +162,10 @@ function Login() {
 
             <div className={sodShow?"SignUpContainer":"SignUpContainer divHide"}>
                 <div className="LoginHeader">
-                    <p className="error">{suErrorMessage}</p>
+                    <p className={suErrorMessage?"error":"divHide"}>
+                        <h2>Error!</h2>
+                        <p>{suErrorMessage}</p>
+                    </p>
                     <h2>Sign Up</h2>
                 </div>
 
@@ -199,7 +212,7 @@ function Login() {
             <div className={billingInfoShow?"BillingContainer":"BillingContainer divHide"}>
                 <div className="LoginHeader">
                     <p className="BIback" onClick={()=> switchPage()}>Back</p>
-                    <p className="error">{biErrorMessage}</p>
+                    <p className={biErrorMessage?"error":"divHide"}>{biErrorMessage}</p>
                     <h2>Billing Info</h2>
                 </div>
 
@@ -215,9 +228,8 @@ function Login() {
                         <input type="text" name="expiry" id="expiry" onChange={e=>dataSetter(e)} placeholder="Expiry"/>
                     </section>
 
-                    <section className="halfWidthInputs Mobile">
+                    <section className=" Mobile">
                         <h3>Mobile Payment</h3>
-                        <input type="text" name="network" id="network" onChange={e=>dataSetter(e)} placeholder="Network"/>
                         <input type="text" name="mobile_number" id="mobileNumber" onChange={e=>dataSetter(e)} placeholder="Mobile Number"/>
                     </section>
                 
