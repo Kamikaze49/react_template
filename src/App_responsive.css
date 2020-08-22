@@ -71,9 +71,8 @@
 
 
 @media screen and (max-width: 48em) {
-    .BillingContainer, .SignUpContainer, .LoginContainer{
+    .BillingContainer, .SignUpContainer{
         width: 100%;
-        margin-top: 0;
     }
 
     .BillingContainer input, .SignUpContainer input{
@@ -92,19 +91,12 @@
         display: block;
     }
 
-    #cardNo{
+    .StatsBody div{
         width: 100%;
-        margin-right: 0%;
-       }
-       #cvv{
-         width: 100%;
-       }
-       #cardHolder{
-         width: 100%;
-         margin-right: 0%;
-       }
-       #expiry{
-         width: 100%;
-       }
+    }
+
+    .Logout{
+        bottom: 3em;
+    }
 
 }
