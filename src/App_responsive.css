@@ -114,5 +114,31 @@
     .SignUpContainer{
         margin: 0;
     }
+    .DPdetails{
+        padding: 0;
+    }
+
+    .OrderDetailsContent{
+        margin: 0;
+    }
+
+    .DoctorDetails, .PatientDetails{
+        width: 100%;
+    }
+
+    .DoctorDetailsContent{
+        border: 0;
+    }
+
+    .DrugDetails .Header h3{
+        margin-bottom: 10px;
+    }
+
+    .DrugDetails .Header{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
+    }
 
 }

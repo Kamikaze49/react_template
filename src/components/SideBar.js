@@ -7,14 +7,14 @@ import UserContext from "./../contexts/UserContext";
 
 const activeStyle = {
   textDecoration: "none",
-  backgroundColor: "#46b3e6",
+  backgroundColor: "rgb(0,125,125)",
   color: "#fff",
   borderRadius: "5px"
 }
 
 const navStyle = {
   textDecoration: "none",
-  color: "#46b3e6"
+  color: "rgb(0,125,125)"
 }
 
 export default function SideBar(){
