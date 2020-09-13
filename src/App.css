@@ -785,6 +785,11 @@ input[type="file"]::-webkit-file-upload-button{
   max-width: 300px;
 }
 
+.drugCard .cardHeader h4{
+  font-size: 1.2em;
+  color: var(--primary-color-blue);
+}
+
 .Drugs .cardContent div{
   display: flex;
   margin: 15px 0;
@@ -807,4 +812,19 @@ input[type="file"]::-webkit-file-upload-button{
   border: 1px solid rgba(0, 0, 0, 0.3);
   padding: 5px;
   border-radius: 3px;
+}
+
+.Prescription{
+  border-top: 2px solid var(--primary-color-blue);
+  padding-top: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.Prescription h3{
+  color: var(--primary-color-blue);
+  font-size: 1em;
+}
+.Prescription textarea{
+  padding: 5px;
 }
