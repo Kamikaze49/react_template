@@ -9,9 +9,9 @@ function OrderHolder({title, data}) {
         <div className="OrderHolder">
             <div className="HolderHeader">
                 <h2>{title}</h2>
-                <div className="filter">
+                {/* <div className="filter">
                     Filter By
-                </div>
+                </div> */}
             </div>
             <div className="HolderBody">
                 {title == "History"?
@@ -22,7 +22,7 @@ function OrderHolder({title, data}) {
                     arrived={item.suite} 
                     completed={item.id%2?"true":"false"} 
                     id={item.id}
-                    status = {item.status}
+                    status = {item.order_status}
                     patient_id={item.patient_id} 
                     type={item.type}/>
                 )
@@ -34,7 +34,7 @@ function OrderHolder({title, data}) {
                         arrived={item.suite} 
                         completed={item.id%2?"true":"false"} 
                         id={item.id}
-                        status = {item.status}
+                        status = {item.order_status}
                         patient_id={item.patient_id} 
                         type={item.type}/>
                     )

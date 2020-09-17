@@ -1,5 +1,5 @@
 import React from 'react'
-import { NavLink } from "react-router-dom"
+import { Link } from "react-router-dom"
 
 function OrderCard({name, id, type, arrived, completed, patient_id, status}) {
     return (
@@ -12,7 +12,7 @@ function OrderCard({name, id, type, arrived, completed, patient_id, status}) {
 
             <div className="cardFooter">
                 <p>Status: <strong>{status}</strong></p>
-                <button><NavLink style={{color:"#fff"}} to={`/Orders/${id}`} >Details</NavLink></button>
+                <button><Link style={{color:"#fff"}} to={`/Orders/${id}`} >Details</Link></button>
             </div> 
         </div>
     )

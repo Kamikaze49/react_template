@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react'
 
-function Drug({status, brand, price, quantity}) {
+function Drug({status, brand, price, quantity, concentration, dosage, name}) {
     const [drugBrand, setDrugBrand] = useState(null)
     const [drugQuantity, setDrugQuantity] = useState(null)
     const [drugPrice, setDrugPrice] = useState(null)
@@ -10,7 +10,7 @@ function Drug({status, brand, price, quantity}) {
     return (
         <div className="drugCard">
             <div className="cardHeader">
-                <h4>Paracetamol - 500mg</h4>
+                <h4>{name} - {concentration}</h4>
             </div>
             <div className="cardContent">
                 <input disabled={status==="accepted"} type="text" 
@@ -46,3 +46,4 @@ function Drug({status, brand, price, quantity}) {
 }
 
 export default Drug
+
