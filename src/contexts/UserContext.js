@@ -31,14 +31,14 @@ export const UserProvider = ({ children }) => {
   useEffect(()=>{
     // make API call and setUser
     auth.onAuthStateChanged(account =>{
-      console.log(account)
+      // console.log(account)
       if(account){
         db.collection("users").doc(account.uid).get()
         .then(doc =>{
           if(doc.exists && doc.data().isVerified){
               let userData = doc.data()
               setUser({...userData, id:account.uid})
-              console.log(user)
+              // console.log(user)
               history.push("/")
           }else{
               // setError("User data not found")
@@ -56,7 +56,7 @@ export const UserProvider = ({ children }) => {
   })
 
 
-  }, [])
+  }, [history])
   
   return (
     <Context.Provider value={[user, setUser]}>

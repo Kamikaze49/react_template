@@ -1,16 +1,23 @@
-import React, {useState, useContext} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import { Link, useHistory } from "react-router-dom"
 import {withSideBar} from '../components/SideBar';
 import UserContext from "./../contexts/UserContext";
 import {auth} from "./../firebase";
+import OrderContext, {OrderProvider} from "./../contexts/OrderContext";
 
 import OrderCard from "./../components/OrderCard"
 
 function Overview() {
     const [user, setUser] = useContext(UserContext)
+    const [orders, setOrders] = useState([])
     const history = useHistory() 
-
-
+    const order = useContext(OrderContext)
+    
+    useEffect(()=>{
+        let l = 4
+        if(order.length<4)l=order.length
+        setOrders(order.slice(0,l))
+    },[])
 
     return (
         <div className="Page Overview">
@@ -24,30 +31,17 @@ function Overview() {
                     <h2>Recent Orders</h2>
                  </div>
                  <div className="RecentOrdersBody">
-                    <OrderCard
-                        name="John Doe"
-                        id="4gfdth354"
-                        arrived="Today"
-                        completed={false}
-                        patient_id="123461"
-                        status="Pending"
-                    />
-                    <OrderCard
-                        name="John Doe"
-                        id="4gfdth354"
-                        arrived="Today"
-                        completed={false}
-                        patient_id="123461"
-                        status="Pending"
-                    />
-                    <OrderCard
-                        name="John Doe"
-                        id="4gfdth354"
-                        arrived="Today"
-                        completed={false}
-                        patient_id="123461"
-                        status="Pending"
-                    />
+                    {
+                        orders.map(order=>
+                            (<OrderCard
+                            name={order.doctor_name}
+                            id={order.id}
+                            arrived={order.date_of_issue}
+                            patient_id={order.patient_id}
+                            status={order.status}
+                            />)
+                        )
+                    }
                  </div>
             </div>
 

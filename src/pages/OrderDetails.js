@@ -3,30 +3,94 @@ import {withSideBar} from '../components/SideBar';
 import {useParams} from "react-router-dom"
 import Drug from "./../components/Drug"
 import OrderContext, {OrderProvider} from "./../contexts/OrderContext";
+import UserContext, {UserProvider} from "./../contexts/UserContext";
+import { db } from "./../firebase"
+import {useHistory} from "react-router-dom"
+
+
 
 function OrderDetails(props) {
+    const history = useHistory()
     const {id} = useParams() 
     const [currentOrder, setCurrentOrder] = useState({
         id:"",
         doctor_name:"",
         hospital:"",
         date_of_issue:"",
-        pharmacies:[{drugs:[]}],
+        pharmacies:{drugs:[]},
         patient_id:"",
         patient_age:null,
         patient_weight:null,
         diagnosis:""
     })
     const order = useContext(OrderContext)
+    const user = useContext(UserContext)
+    const userId = user.id
 
+    const setDrugDetails = (drugDetails) =>{
+        let order = currentOrder
+        order.pharmacies.drugs = drugDetails
+        setCurrentOrder(order)
+    }
 
     useEffect(()=>{
         order.forEach(item=>{
-            console.log(item)
-            if(item.id === id)setCurrentOrder(item)
+            // console.log(item)
+            if(item.id === id){
+                // console.log(item)
+                setCurrentOrder(item)
+            }
         })
 
     }, [])
+
+    const setDrugData = (name, price, brand, measure, prescription) =>{
+        const order = currentOrder
+        order.pharmacies.drugs.forEach(drug =>{
+            if(drug.name === name){
+                drug.price = price
+                drug.brand = brand
+                drug.measure = measure
+                drug.prescription = prescription
+            }
+        })
+        setCurrentOrder(order)
+        // console.log(order)
+    }
+
+    // https://firebase.google.com/docs/firestore/manage-data/add-data#update_elements_in_an_array
+    
+    // https://firebase.google.com/docs/firestore/manage-data/add-data
+
+    const submitData = () =>{
+        let idx = currentOrder.idx
+        delete currentOrder.idx
+        const docRef = db.collection("orders").doc(currentOrder.id)
+        if(currentOrder.order_status === "new")currentOrder.order_status = "pending"
+        try{
+        docRef.get().then(doc =>{
+            if(doc.exists){
+                let pharmacies = doc.data().pharmacies
+                if(currentOrder.pharmacies.accepted_status === "new")currentOrder.pharmacies.accepted_status = "pending"
+                if(currentOrder.pharmacies.accepted_status === "accepted")currentOrder.pharmacies.accepted_status = "delivering"
+                pharmacies[idx] = currentOrder.pharmacies
+             
+                db.collection("orders").doc(currentOrder.id).update({
+                    pharmacies:pharmacies
+                }).then(()=> {
+                    history.push("/Orders")
+                    alert("Submission Complete")
+                })
+            }
+        })
+    }catch(e){
+        alert(e.message)
+    }
+    
+    }
+
+
+
 
 
     return (
@@ -76,7 +140,7 @@ function OrderDetails(props) {
                     </div>
                     <div className="Drugs">
                         {
-                            currentOrder.pharmacies[0].drugs.map(drug=>
+                            currentOrder.pharmacies.drugs.map(drug=>
                                 (<Drug
                                     brand={drug.brand}
                                     concentration={drug.concentration}
@@ -84,13 +148,17 @@ function OrderDetails(props) {
                                     name={drug.name}
                                     quantity={drug.quantity}
                                     price={drug.price}
+                                    status={currentOrder.pharmacies.accepted_status}
                                     total_price={drug.total_price}
+                                    setData = {setDrugData}
                                 />)
                             )
                         }
                     </div>
                 </div>
-            </div>
+            </div>{(currentOrder.pharmacies.accepted_status === "new" || currentOrder.pharmacies.accepted_status === "accepted")&&
+                <button className="sbtn" onClick={()=>submitData()}>Submit</button>
+            }
         </div>
     )
 }

@@ -76,32 +76,35 @@ function Login() {
 
         console.log(license_url)
         console.log(hospital_image_url)
+        try{
+            await auth.createUserWithEmailAndPassword(userData.email, userData.password)
+            auth.onAuthStateChanged((user) =>{
+                if(user){
+                    db.collection("users").doc(user.uid).set({
+                        pharmacy_name: userData.pharmacy_name,
+                        email: userData.email,
+                        geolocation: userData.geolocation,
+                        card_number: userData.card_number,
+                        cvv: userData.cvv,
+                        card_holder: userData.card_holder,
+                        expiry: userData.expiry,
+                        network: userData.network,
+                        mobile_number: userData.mobile_number,
+                        license_url: license_url,
+                        hospital_image_url: hospital_image_url,
+                        isVerified:false
+                    })
 
-        await auth.createUserWithEmailAndPassword(userData.email, userData.password)
-        auth.onAuthStateChanged((user) =>{
-            if(user){
-                db.collection("users").doc(user.uid).set({
-                    pharmacy_name: userData.pharmacy_name,
-                    email: userData.email,
-                    geolocation: userData.geolocation,
-                    card_number: userData.card_number,
-                    cvv: userData.cvv,
-                    card_holder: userData.card_holder,
-                    expiry: userData.expiry,
-                    network: userData.network,
-                    mobile_number: userData.mobile_number,
-                    license_url: license_url,
-                    hospital_image_url: hospital_image_url,
-                    isVerified:false
-                })
-
-            }else{
-                setBiErrorMessage("Sign Up Failed")
-                window.scrollTo(0, 0)
-            }
+                }else{
+                    setBiErrorMessage("Sign Up Failed")
+                    window.scrollTo(0, 0)
+                }
 
 
-        })
+            })
+        }catch(e){
+            alert(e)
+        }
 
 
 
